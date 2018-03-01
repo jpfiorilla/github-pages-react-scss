@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import pages from '../pages';
+import { pages } from '../data';
 import {
   DefaultComponent,
   Home,
