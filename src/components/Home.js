@@ -3,15 +3,6 @@ import Interactive from 'react-interactive';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const repoReadmeLink = text => (
-    <Interactive
-      as="a"
-      href="https://github.com/rafrex/spa-github-pages#readme"
-    >
-      {text}
-    </Interactive>
-  );
-
   return (
     <div>
       <p>
@@ -22,9 +13,8 @@ export default function Home() {
         with single page apps (like this one).
       </p>
       <p>
-        Please see the {repoReadmeLink('repo readme')} for instructions on how
-        to use this boilerplate to deploy your own single page app using GitHub
-        Pages.
+        Please see the repo readme for instructions on how to use this
+        boilerplate to deploy your own single page app using GitHub Pages.
       </p>
       <div>
         <Interactive as={Link} to="/example">

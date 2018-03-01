@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Interactive from 'react-interactive';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
@@ -9,12 +9,7 @@ import '../main.scss';
 
 export default function App() {
   return (
-    <div>
-      <h1>Single Page Apps for GitHub Pages</h1>
-      <Interactive as="a" href="https://github.com/rafrex/spa-github-pages">
-        https://github.com/rafrex/spa-github-pages
-      </Interactive>
-
+    <div id="App">
       <nav>
         <Breadcrumbs />
       </nav>
