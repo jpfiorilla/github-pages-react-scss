@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Interactive from 'react-interactive';
 import { Link } from 'react-router-dom';
-import { Li } from '../styles/style';
-import s from '../styles/exampleTwoDeepComponent.style';
 
 const propTypes = {
   location: PropTypes.object.isRequired,
@@ -26,21 +24,26 @@ export default function ExampleTwoDeepComponent({ location }) {
   function linkToShowQueryAndOrHash() {
     if (queryPresent && hashPresent) return null;
 
-    const queryString = (queryPresent ? location.search : '?field1=foo&field2=bar');
-    const hashFragment = (hashPresent ? location.hash : '#boom!');
+    const queryString = queryPresent
+      ? location.search
+      : '?field1=foo&field2=bar';
+    const hashFragment = hashPresent ? location.hash : '#boom!';
 
     let linkText = '';
     if (queryPresent && !hashPresent) linkText = 'Show with hash fragment';
     if (!queryPresent && hashPresent) linkText = 'Show with query string';
-    if (!queryPresent && !hashPresent) linkText = 'Show with query string and hash fragment';
+    if (!queryPresent && !hashPresent) {
+      linkText = 'Show with query string and hash fragment';
+    }
 
     return (
-      <div style={s.lineContainer}>
+      <div>
         <Interactive
           as={Link}
           to={`/example/two-deep${queryString}${hashFragment}`}
-          {...s.link}
-        >{linkText}</Interactive>
+        >
+          {linkText}
+        </Interactive>
       </div>
     );
   }
@@ -56,21 +59,19 @@ export default function ExampleTwoDeepComponent({ location }) {
 
   return (
     <div>
-      <div style={s.lineContainer}>
+      <div>
         <div>{queryStringTitle()}</div>
         <ul>
-          {
-            parseQueryString().map((pair, index) => (
-              <Li key={`${pair[0]}${pair[1]}${index}`}>{`${pair[0]}: ${pair[1]}`}</Li>
-            ))
-          }
+          {parseQueryString().map((pair, index) => (
+            <li key={`${pair[0]}${pair[1]}${index}`}>{`${pair[0]}: ${
+              pair[1]
+            }`}</li>
+          ))}
         </ul>
       </div>
-      <div style={s.lineContainer}>
+      <div>
         <div>{hashFragmentTitle()}</div>
-        <ul>
-          {hashPresent && <Li>{location.hash.slice(1)}</Li>}
-        </ul>
+        <ul>{hashPresent && <li>{location.hash.slice(1)}</li>}</ul>
       </div>
       {linkToShowQueryAndOrHash()}
     </div>
