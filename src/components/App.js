@@ -6,7 +6,7 @@ import ExampleComponent from './ExampleComponent';
 import PageNotFound from './PageNotFound';
 import Breadcrumbs from './Breadcrumbs';
 import s from '../styles/app.style';
-import '../styles/main.scss';
+import '../main.scss';
 
 export default function App() {
   return (

@@ -1,4 +1,6 @@
-Template/easy starter repo I use for making github pages sites. Uses SCSS. Fork of https://github.com/rafrex/spa-github-pages. Those notes below:
+Template/easy starter repo I use for making github pages sites. Uses SCSS.
+
+Fork of https://github.com/rafrex/spa-github-pages. That readme below:
 
 # Single Page Apps for GitHub Pages
 
