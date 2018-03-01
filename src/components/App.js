@@ -6,36 +6,31 @@ import {
   Home,
   ExampleComponent,
   PageNotFound,
-  Breadcrumbs,
+  Header,
+  Footer,
 } from '.';
 import '../main.scss';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div id="App">
-        <nav>
-          <Breadcrumbs />
-        </nav>
+export default function App() {
+  return (
+    <div id="App">
+      <Header />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/example" component={ExampleComponent} />
-          {pages.map((page) => {
-            console.log(page);
-            return (
-              <Route
-                exact
-                {...page}
-                key={page.path}
-                path={page.path}
-                component={page.component || DefaultComponent}
-              />
-            );
-          })}
-          <Route component={PageNotFound} />
-        </Switch>
-      </div>
-    );
-  }
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/example" component={ExampleComponent} />
+        {pages.map(page => (
+          <Route
+            exact
+            {...page}
+            key={page.path}
+            component={page.component || DefaultComponent}
+          />
+        ))}
+        <Route component={PageNotFound} />
+      </Switch>
+
+      <Footer />
+    </div>
+  );
 }
