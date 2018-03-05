@@ -11,7 +11,7 @@ export default class DefaultComponent extends React.Component {
       location,
       path,
       title = getTitleFromPathname(location || path),
-      description = '',
+      description,
     } = this.props;
     return (
       // <Switch>

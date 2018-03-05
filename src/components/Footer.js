@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { SocialIcon } from 'react-social-icons';
 import { facebookHandle, twitterHandle } from '../data';
 
 export default class Footer extends React.Component {
@@ -6,23 +7,25 @@ export default class Footer extends React.Component {
     return (
       <div id="Footer">
         {facebookHandle ? (
-          <a
-            target="__blank"
-            href={`https://www.facebook.com/${facebookHandle.replace(
-              /\W/g,
-              '',
-            )}`}
-          >
-            {facebookHandle}
-          </a>
+          <SocialIcon
+            url={
+              facebookHandle.includes('.com')
+                ? facebookHandle
+                : `https://www.facebook.com/${facebookHandle.replace(
+                    /\W/g,
+                    '',
+                  )}`
+            }
+          />
         ) : null}
         {twitterHandle ? (
-          <a
-            target="__blank"
-            href={`https://twitter.com/${twitterHandle.replace(/\W/g, '')}`}
-          >
-            {twitterHandle}
-          </a>
+          <SocialIcon
+            url={
+              twitterHandle.includes('.com')
+                ? twitterHandle
+                : `https://twitter.com/${twitterHandle.replace(/\W/g, '')}`
+            }
+          />
         ) : null}
       </div>
     );
