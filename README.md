@@ -1,4 +1,10 @@
-Template/easy starter repo I use for making github pages sites. Uses SCSS.
+Template/easy starter repo I use for making github pages sites. Implemented libraries include:
+
+* `.scss`
+* `react-redux`
+* SEO component (based on `react-helmet`)
+* `react-social-icons`
+* * assorted utility funcs & some `lodash`
 
 Insert client data (site name, social media accounts & images, etc) in `src/data.js`.
 
