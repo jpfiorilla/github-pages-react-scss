@@ -1,5 +1,7 @@
 Template/easy starter repo I use for making github pages sites. Uses SCSS.
 
+Insert client data (site name, social media accounts & images, etc) in `src/data.js`.
+
 Fork of https://github.com/rafrex/spa-github-pages. That readme below:
 
 # Single Page Apps for GitHub Pages
