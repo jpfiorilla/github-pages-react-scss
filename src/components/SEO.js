@@ -1,36 +1,48 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { siteName, twitterHandle, socialMediaImages } from '../data';
+import sample from 'lodash.sample';
+import { siteName, twitterHandle, schema, socialMediaImages } from '../data';
+
+const allImages = [
+  ...socialMediaImages.facebook,
+  ...socialMediaImages.twitter,
+  ...socialMediaImages.google,
+];
+const facebookImages = socialMediaImages.facebook.length
+  ? socialMediaImages.facebook
+  : allImages;
+const twitterImages = socialMediaImages.twitter.length
+  ? socialMediaImages.twitter
+  : allImages;
+const googleImages = socialMediaImages.google.length
+  ? socialMediaImages.google
+  : allImages;
 
 const getMetaTags = ({
   title,
-  description,
+  description = '',
   url,
-  //   contentType,
   published,
   updated,
   category,
   tags,
   twitter,
 }) => {
+  const metaTitle = title ? `${title} | ${siteName}` : siteName;
   const metaTags = [
-    { itemprop: 'name', content: title },
+    { itemprop: 'name', content: metaTitle },
     { itemprop: 'description', content: description },
-    // { itemprop: 'image', content: seoImageURL(_.sample(socialMediaImages.google)) },
+    { itemprop: 'image', content: sample(googleImages) },
     { name: 'description', content: description },
     // { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: twitter || twitterHandle },
-    {
-      name: 'twitter:title',
-      content: title ? `${title} | ${siteName}` : siteName,
-    },
+    { name: 'twitter:title', content: metaTitle },
     // { name: 'twitter:description', content: description },
     { name: 'twitter:creator', content: twitter || twitterHandle },
-    // { name: 'twitter:image:src', content: seoImageURL(_.sample(socialMediaImages.twitter)) },
-    { name: 'og:title', content: `${title} | Simplifi` },
-    // { name: 'og:type', content: contentType },
+    { name: 'twitter:image:src', content: sample(twitterImages) },
+    { name: 'og:title', content: metaTitle },
     { name: 'og:url', content: url },
-    // { name: 'og:image', content: seoImageURL(_.sample(socialMediaImages.facebook)) },
+    { name: 'og:image', content: sample(facebookImages) },
     { name: 'og:description', content: description },
     { name: 'og:site_name', content: 'Simplifi' },
     // { name: 'fb:app_id', content: '<FB App ID>' },
@@ -49,11 +61,9 @@ const getMetaTags = ({
 };
 
 const SEO = ({
-  schema,
   title,
   description = '',
-  //   path,
-  //   contentType,
+  path,
   published,
   updated,
   category,
@@ -67,11 +77,10 @@ const SEO = ({
       itemscope: undefined,
       itemtype: `http://schema.org/${'VideoGame' || schema}`,
     }}
-    link={[{ rel: 'canonical', href: location.href }]}
+    link={[{ rel: 'canonical', href: path || location.href }]}
     meta={getMetaTags({
       title,
       description,
-      //   contentType,
       url: location.href,
       published,
       updated,
