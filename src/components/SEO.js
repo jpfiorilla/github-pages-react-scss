@@ -51,17 +51,6 @@ const getMetaTags = ({
     // { name: 'fb:app_id', content: '<FB App ID>' },
   ];
 
-  if (published) {
-    metaTags.push({ name: 'article:published_time', content: published });
-  }
-  if (updated) {
-    metaTags.push({ name: 'article:modified_time', content: updated });
-  }
-  if (category) metaTags.push({ name: 'article:section', content: category });
-  if (tags && tags.length) {
-    metaTags.push({ name: 'article:tag', content: tags });
-  }
-
   return metaTags;
 };
 
@@ -69,11 +58,6 @@ const SEO = ({
   title = '',
   description = '',
   path = window.location.href || '',
-  published = '',
-  updated = '',
-  category = '',
-  tags = [],
-  twitter = '',
 }) => (
   <Helmet
     title={title ? `${title} | ${siteName}` : siteName || ''}
@@ -87,11 +71,6 @@ const SEO = ({
       title,
       description,
       url: location.href,
-      published,
-      updated,
-      category,
-      tags,
-      twitter,
     })}
   />
 );

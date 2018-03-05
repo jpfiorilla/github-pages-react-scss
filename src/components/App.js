@@ -24,14 +24,17 @@ export class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route path="/example" component={ExampleComponent} /> */}
-          {pages.map(page => (
-            <Route
-              exact
-              key={page.path}
-              render={props => <DefaultComponent {...props} />}
-              // component={page.component || DefaultComponent}
-            />
-          ))}
+          {pages.map((page) => {
+            console.log(page);
+            const Component = page.component || DefaultComponent;
+            return (
+              <Route
+                exact
+                key={page.path}
+                render={props => <Component {...props} {...page} />}
+              />
+            );
+          })}
           <Route component={PageNotFound} />
         </Switch>
 
