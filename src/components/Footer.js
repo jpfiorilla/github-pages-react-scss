@@ -1,20 +1,17 @@
 import * as React from 'react';
 import { SocialIcon } from 'react-social-icons';
-import { facebookHandle, twitterHandle } from '../data';
+import { facebookPage, twitterHandle } from '../data';
 
 export default class Footer extends React.Component {
   render() {
     return (
       <div id="Footer">
-        {facebookHandle ? (
+        {facebookPage ? (
           <SocialIcon
             url={
-              facebookHandle.includes('.com')
-                ? facebookHandle
-                : `https://www.facebook.com/${facebookHandle.replace(
-                    /\W/g,
-                    '',
-                  )}`
+              facebookPage.includes('.com')
+                ? facebookPage
+                : `https://www.facebook.com/${facebookPage.replace(/\W/g, '')}`
             }
           />
         ) : null}

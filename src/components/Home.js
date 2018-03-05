@@ -15,7 +15,8 @@ export default function Home() {
         Please see the repo readme for instructions on how to use this
         boilerplate to deploy your own single page app using GitHub Pages.
       </p>
-      <Link to="/example">Example page</Link>
+      <Link to="/test">Example page</Link>
+      <Link to="/testing">Example page 2</Link>
       <Link to="/example/two-deep?field1=foo&field2=bar#boom!">
         Example two deep with query and hash
       </Link>

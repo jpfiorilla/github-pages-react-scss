@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { sampleAction } from '../redux/actions/actions';
 import { pages } from '../data';
@@ -35,4 +36,6 @@ export class App extends React.Component {
   }
 }
 
-export default connect(state => state.reducer, { sampleAction })(App);
+export default withRouter(
+  connect(state => state.reducer, { sampleAction })(App),
+);

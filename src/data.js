@@ -15,7 +15,7 @@ export const pages = [
   },
 ];
 
-export const facebookHandle = '';
+export const facebookPage = '';
 export const twitterHandle = '';
 
 // SEO
