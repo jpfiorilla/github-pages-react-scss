@@ -18,6 +18,9 @@ const googleImages = socialMediaImages.google.length
   ? socialMediaImages.google
   : allImages;
 
+const twitterName =
+  twitterHandle[0] === '@' ? twitterHandle : `@${twitterHandle}`;
+
 const getMetaTags = ({
   title,
   description = '',
@@ -34,11 +37,11 @@ const getMetaTags = ({
     { itemprop: 'description', content: description },
     { itemprop: 'image', content: sample(googleImages) },
     { name: 'description', content: description },
-    // { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: twitter || twitterHandle },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: twitter || twitterName },
     { name: 'twitter:title', content: metaTitle },
-    // { name: 'twitter:description', content: description },
-    { name: 'twitter:creator', content: twitter || twitterHandle },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:creator', content: twitter || twitterName },
     { name: 'twitter:image:src', content: sample(twitterImages) },
     { name: 'og:title', content: metaTitle },
     { name: 'og:url', content: url },
@@ -75,7 +78,7 @@ const SEO = ({
     htmlAttributes={{
       lang: 'en',
       itemscope: undefined,
-      itemtype: `http://schema.org/${'VideoGame' || schema}`,
+      itemtype: `http://schema.org/${schema}`,
     }}
     link={[{ rel: 'canonical', href: path || location.href }]}
     meta={getMetaTags({

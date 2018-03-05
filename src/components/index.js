@@ -7,4 +7,5 @@ export { default as Home } from './Home';
 export { default as PageNotFound } from './PageNotFound';
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as Contact } from './Contact';
+export { default as SEO } from './SEO';
 /* eslint-enable */

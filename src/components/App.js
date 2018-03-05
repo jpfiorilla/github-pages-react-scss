@@ -8,12 +8,14 @@ import {
   PageNotFound,
   Header,
   Footer,
+  SEO,
 } from '.';
 import '../main.scss';
 
 export default function App() {
   return (
     <div id="App">
+      <SEO />
       <Header />
 
       <Switch>

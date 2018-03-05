@@ -1,7 +1,6 @@
 // CONTENT
 
 export const siteName = 'Site Name';
-export const twitterHandle = '';
 
 export const email = '';
 
@@ -10,6 +9,8 @@ export const pages = [
     path: '/test',
   },
 ];
+
+export const twitterHandle = '';
 
 // SEO
 
