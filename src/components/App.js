@@ -41,6 +41,4 @@ export class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => state.reducer;
-
-export default connect(mapStateToProps, { sampleAction })(App);
+export default connect(state => state.reducer, { sampleAction })(App);
