@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
-import Interactive from 'react-interactive';
 
 const breadCrumbTitles = {
   '': 'Home',
@@ -15,9 +14,7 @@ function BreadcrumbsItem({ match }) {
 
   return (
     <span>
-      <Interactive as={Link} to={to}>
-        {title || 'Page Not Found'}
-      </Interactive>
+      <Link to={to}>{title || 'Page Not Found'}</Link>
       {!match.isExact && title && ' / '}
       {title && (
         <Route

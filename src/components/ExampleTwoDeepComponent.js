@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Interactive from 'react-interactive';
 import { Link } from 'react-router-dom';
 
 const propTypes = {
@@ -38,12 +37,9 @@ export default function ExampleTwoDeepComponent({ location }) {
 
     return (
       <div>
-        <Interactive
-          as={Link}
-          to={`/example/two-deep${queryString}${hashFragment}`}
-        >
+        <Link to={`/example/two-deep${queryString}${hashFragment}`}>
           {linkText}
-        </Interactive>
+        </Link>
       </div>
     );
   }

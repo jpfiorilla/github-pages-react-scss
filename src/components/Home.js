@@ -1,5 +1,4 @@
 import React from 'react';
-import Interactive from 'react-interactive';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -16,19 +15,10 @@ export default function Home() {
         Please see the repo readme for instructions on how to use this
         boilerplate to deploy your own single page app using GitHub Pages.
       </p>
-      <div>
-        <Interactive as={Link} to="/example">
-          Example page
-        </Interactive>
-      </div>
-      <div>
-        <Interactive
-          as={Link}
-          to="/example/two-deep?field1=foo&field2=bar#boom!"
-        >
-          Example two deep with query and hash
-        </Interactive>
-      </div>
+      <Link to="/example">Example page</Link>
+      <Link to="/example/two-deep?field1=foo&field2=bar#boom!">
+        Example two deep with query and hash
+      </Link>
     </div>
   );
 }
