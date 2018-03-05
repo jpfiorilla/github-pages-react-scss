@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import { sampleAction } from '../redux/actions/actions';
 import { pages } from '../data';
 import { DefaultComponent, Home, PageNotFound, Header, Footer, SEO } from '.';
-import '../main.scss';
+/* eslint-disable no-unused-vars */
+import colors from '../main.scss';
+/* eslint-enable */
 
-export class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div id="App">
