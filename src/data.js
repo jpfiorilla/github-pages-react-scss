@@ -9,8 +9,13 @@ export const pages = [
     title: 'Testing title',
     path: '/test',
   },
+  {
+    title: '123',
+    path: '/testing',
+  },
 ];
 
+export const facebookHandle = '';
 export const twitterHandle = '';
 
 // SEO

@@ -3,15 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sampleAction } from '../redux/actions/actions';
 import { pages } from '../data';
-import {
-  DefaultComponent,
-  Home,
-  // ExampleComponent,
-  PageNotFound,
-  Header,
-  Footer,
-  SEO,
-} from '.';
+import { DefaultComponent, Home, PageNotFound, Header, Footer, SEO } from '.';
 import '../main.scss';
 
 export class App extends React.Component {
@@ -23,14 +15,13 @@ export class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route path="/example" component={ExampleComponent} /> */}
           {pages.map((page) => {
-            console.log(page);
             const Component = page.component || DefaultComponent;
             return (
               <Route
                 exact
                 key={page.path}
+                path={page.path}
                 render={props => <Component {...props} {...page} />}
               />
             );

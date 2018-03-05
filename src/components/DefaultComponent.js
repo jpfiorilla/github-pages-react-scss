@@ -1,6 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import camel from 'lodash.camelcase';
+// import { Switch, Route } from 'react-router-dom';
 // import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
 import { SEO } from '.';
 import { getTitleFromPathname } from '../utils';
@@ -21,7 +21,7 @@ export default class DefaultComponent extends React.Component {
           description={description}
           path={window.location.href}
         />
-        hi
+        {/* content goes here */}
       </div>
       // </Switch>
     );
