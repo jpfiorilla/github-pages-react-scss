@@ -8,3 +8,5 @@ export function sampleAction(sampleProp) {
     },
   };
 }
+
+export default { sampleAction };

@@ -1,4 +1,4 @@
-import { SAMPLE_ACTION } from '../actions';
+import { SAMPLE_ACTION } from '../actions/actions';
 
 const initialState = {
   sampleState: null,
