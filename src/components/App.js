@@ -6,7 +6,7 @@ import { pages } from '../data';
 import {
   DefaultComponent,
   Home,
-  ExampleComponent,
+  // ExampleComponent,
   PageNotFound,
   Header,
   Footer,
@@ -23,13 +23,13 @@ export class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/example" component={ExampleComponent} />
+          {/* <Route path="/example" component={ExampleComponent} /> */}
           {pages.map(page => (
             <Route
               exact
-              {...page}
               key={page.path}
-              component={page.component || DefaultComponent}
+              render={props => <DefaultComponent {...props} />}
+              // component={page.component || DefaultComponent}
             />
           ))}
           <Route component={PageNotFound} />

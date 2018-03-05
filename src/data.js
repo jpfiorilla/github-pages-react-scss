@@ -6,7 +6,7 @@ export const email = '';
 
 export const pages = [
   {
-    title: 'Test',
+    title: 'Testing title',
     path: '/test',
   },
 ];
