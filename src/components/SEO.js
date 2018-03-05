@@ -29,7 +29,7 @@ const getMetaTags = ({
   updated,
   category,
   tags,
-  twitter,
+  twitter = twitterName,
 }) => {
   const metaTitle = title ? `${title} | ${siteName}` : siteName;
   const metaTags = [
@@ -38,16 +38,16 @@ const getMetaTags = ({
     { itemprop: 'image', content: sample(googleImages) },
     { name: 'description', content: description },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: twitter || twitterName },
+    { name: 'twitter:site', content: twitter },
     { name: 'twitter:title', content: metaTitle },
     { name: 'twitter:description', content: description },
-    { name: 'twitter:creator', content: twitter || twitterName },
+    { name: 'twitter:creator', content: twitter },
     { name: 'twitter:image:src', content: sample(twitterImages) },
     { name: 'og:title', content: metaTitle },
     { name: 'og:url', content: url },
     { name: 'og:image', content: sample(facebookImages) },
     { name: 'og:description', content: description },
-    { name: 'og:site_name', content: 'Simplifi' },
+    { name: 'og:site_name', content: siteName },
     // { name: 'fb:app_id', content: '<FB App ID>' },
   ];
 
@@ -58,20 +58,22 @@ const getMetaTags = ({
     metaTags.push({ name: 'article:modified_time', content: updated });
   }
   if (category) metaTags.push({ name: 'article:section', content: category });
-  if (tags) metaTags.push({ name: 'article:tag', content: tags });
+  if (tags && tags.length) {
+    metaTags.push({ name: 'article:tag', content: tags });
+  }
 
   return metaTags;
 };
 
 const SEO = ({
-  title,
+  title = '',
   description = '',
-  path,
-  published,
-  updated,
-  category,
-  tags,
-  twitter,
+  path = window.location.href || '',
+  published = '',
+  updated = '',
+  category = '',
+  tags = [],
+  twitter = '',
 }) => (
   <Helmet
     title={title ? `${title} | ${siteName}` : siteName || ''}
@@ -80,7 +82,7 @@ const SEO = ({
       itemscope: undefined,
       itemtype: `http://schema.org/${schema}`,
     }}
-    link={[{ rel: 'canonical', href: path || location.href }]}
+    link={[{ rel: 'canonical', href: path }]}
     meta={getMetaTags({
       title,
       description,
