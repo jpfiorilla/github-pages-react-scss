@@ -21,7 +21,7 @@ export default class DefaultComponent extends React.Component {
           description={description}
           path={window.location.href}
         />
-        {/* content goes here */}
+        {title + path}
       </div>
       // </Switch>
     );

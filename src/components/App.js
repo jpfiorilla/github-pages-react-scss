@@ -4,7 +4,15 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { sampleAction } from '../redux/actions/actions';
 import { pages } from '../data';
-import { DefaultComponent, Home, PageNotFound, Header, Footer, SEO } from '.';
+import {
+  Home,
+  PageNotFound,
+  Header,
+  Footer,
+  SEO,
+  components,
+  DefaultComponent,
+} from '.';
 /* eslint-disable no-unused-vars */
 import colors from '../main.scss';
 /* eslint-enable */
@@ -19,7 +27,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           {pages.map((page) => {
-            const Component = page.component || DefaultComponent;
+            const Component = components[page.component] || DefaultComponent;
             return (
               <Route
                 exact

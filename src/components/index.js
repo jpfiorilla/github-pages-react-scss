@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export { default as App } from './App';
+export { default as components } from './components';
 export { default as DefaultComponent } from './DefaultComponent';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
