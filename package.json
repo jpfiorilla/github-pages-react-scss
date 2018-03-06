@@ -44,6 +44,7 @@
     "piecewisecss": "^1.7.6",
     "react-transition-group": "^2.2.1",
     "sass-loader": "^6.0.6",
+    "scss-react-transition": "^0.2.2",
     "style-loader": "^0.20.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"

@@ -17,7 +17,7 @@ export default function Home() {
       </p>
       <Link to="/test">Example page</Link>
       <Link to="/testing">Example page 2</Link>
-      <Link to="/example/two-deep?field1=foo&field2=bar#boom!">
+      <Link to="/test/two-deep?field1=foo&field2=bar#boom!">
         Example two deep with query and hash
       </Link>
     </div>

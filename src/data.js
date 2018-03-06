@@ -21,12 +21,12 @@ export const twitterHandle = '';
 // SEO
 
 /*
-  insert urls as strings to the images you want to show up on the associated social media site.
+  insert direct urls to the images you want to show up on social media sites when linking to this site.
   these can be uploaded to imgur, etc.
   the proper size is listed above each social media site;
   essentially, make three versions of each image and paste the imgur links.
 
-  (that's pro mode anyway. you can just add them to one of the arrays.
+  (that's pro mode anyway. you can just make one version and add them to any of the arrays.
   it'll work but not look optimal)
 */
 export const socialMediaImages = {

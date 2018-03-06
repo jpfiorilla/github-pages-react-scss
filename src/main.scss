@@ -1,7 +1,5 @@
 @import '../node_modules/piecewisecss/piecewise';
-@import './scss/colors';
+@import '../node_modules/scss-react-transition/scss-react-transition';
 
-@import './scss/app';
-@import './scss/homepage';
-@import './scss/header';
-@import './scss/footer';
+@import './scss/colors';
+@import './scss/mixins';
